@@ -1,0 +1,14 @@
+server{
+    
+    server_name depol_localhost;
+
+    valid_referers none blocked server_names
+                   *.example.com example.* www.example.org/galleries/
+                   ~\.google\.;
+
+    if ($invalid_referer) {
+        return 403;
+        
+}
+
+}
