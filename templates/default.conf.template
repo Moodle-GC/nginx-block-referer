@@ -1,14 +1,20 @@
 server{
     
-    server_name depol_localhost;
+    server_name localhost;
 
-    valid_referers none blocked server_names
-                   *.example.com example.* www.example.org/galleries/
-                   ~\.google\.;
+location ~ ^/test.html$ {
 
-    if ($invalid_referer) {
-        return 403;
-        
-}
+        valid_referers blocked server_names;
+        #    localhost.*;
+
+        if ($invalid_referer) {
+           return 403;
+
+            #more_set_headers "Server: my_server";
+
+       }
+       #add_header X-my-header my-header-content;
+       
+    }
 
 }
