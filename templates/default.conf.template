@@ -2,10 +2,10 @@ server{
     
     server_name localhost;
 
-location ~ ^/test.html$ {
+location ~ ^/playback/.*$ {
 
-        valid_referers blocked server_names;
-        #    localhost.*;
+        valid_referers blocked server_names
+            localhost.*;
 
         if ($invalid_referer) {
            return 403;

@@ -1,5 +1,12 @@
 # Nginx block by referer POC
 
+el archivo `default.conf.template` se sumará a la configuración de NginX de docker.
+
+Hay 3 archivos, 
+/prueba3.html se puede acceder normalmente
+/playback/test.html y /playback/prueba2.html sólo se pueden acceder desde /prueba3.html
+
+
 1. clone repo `git clone https://github.com/Moodle-GC/nginx-block-referer`
 2. `cd nginx-bloc-referer`
 3. `docker-compose up -d`
